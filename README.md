@@ -1,5 +1,5 @@
 
-# Welcome to the Runlog3.o CDK Python project!
+# Welcome to the Runlog CDK Python project!
 
 This app tracks test records for a fleet of trucks based on incoming CSV files. 
 Trucks configurations and test records are stored in DDB tables. 
