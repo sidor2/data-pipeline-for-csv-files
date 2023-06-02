@@ -1,0 +1,27 @@
+*.swp
+package-lock.json
+__pycache__
+.pytest_cache
+.venv
+*.egg-info
+# *.zip
+python/
+
+# CDK asset staging directory
+.cdk.staging
+cdk.out
+node_modules
+E94821_2023_04_15_474646_Map.html
+stacks/s3_stack.py
+api_calls/variables.py
+package.json
+requirements-dev.txt
+.vscode/launch.json
+.vscode/settings.json
+json/ddb_scan_response.json
+json/ddb_stream_event.json
+json/get_all_trucks.json
+json/item.json
+tests/__init__.py
+tests/unit/__init__.py
+tests/
