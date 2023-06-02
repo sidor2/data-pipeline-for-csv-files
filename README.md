@@ -22,7 +22,7 @@ $ npm install -g aws-cdk
 ## Setup
 To manually create a virtualenv on MacOS and Linux:
 
-### inside the Runlog30 directory
+### inside the ```runlog``` directory
 ```
 $ python3 -m venv .venv
 ```
