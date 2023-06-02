@@ -13,7 +13,6 @@ cdk.out
 node_modules
 E94821_2023_04_15_474646_Map.html
 stacks/s3_stack.py
-api_calls/variables.py
 package.json
 requirements-dev.txt
 .vscode/launch.json

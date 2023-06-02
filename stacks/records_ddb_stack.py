@@ -35,14 +35,14 @@ class RecordsDdbStack(Stack):
         csv_bucket = s3.Bucket(
             self, "CsvBucket",
             # removal_policy=RemovalPolicy.RETAIN,
-            bucket_name="incomingcsvs-f1a85bab-3904-4c07-b8a9-9a8aaa12814",
+            bucket_name="incomingcsvs-",
             enforce_ssl=True
         )
 
         maps_bucket = s3.Bucket(
             self, "MapsBucket",
             # removal_policy=RemovalPolicy.RETAIN,
-            bucket_name="maps-f1a85bab-3904-4c07-b8a9-9a8aaa12814",
+            bucket_name="maps-",
             public_read_access=False,
             enforce_ssl=True,
         )
