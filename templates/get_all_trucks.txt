@@ -1,0 +1,22 @@
+#set($inputRoot = $input.path('$'))
+[
+#foreach($elem in $inputRoot.Items) 
+{
+"originalVin": "$elem.originalVin.S",
+"currentVin": "$elem.currentVin.S",
+"par": "$elem.par.S",
+"engine": "$elem.engine.S",
+"ats": "$elem.ats.S",
+"cab": "$elem.cab.S",
+"chassis": "$elem.chassis.S",
+"axleRatio": "$elem.axleRatio.S",
+"powerRating": "$elem.powerRating.S",
+"fuelmap": "$elem.fuelmap.S",
+"transmission": "$elem.transmission.S",
+"cooler": "$elem.cooler.S",
+"fanModel": "$elem.fanModel.S",
+"fanClutch": "$elem.fanClutch.S",
+"trailerNumber": "$elem.trailerNumber.S"
+}#if ($foreach.hasNext),#end
+#end
+]

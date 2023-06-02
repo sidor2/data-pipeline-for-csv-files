@@ -1,0 +1,435 @@
+digraph "Diagram" {
+  splines = "ortho";
+  pad = "1.0";
+  nodesep = "0.60";
+  ranksep = "0.75";
+  fontname = "Sans-Serif";
+  fontsize = "15";
+  dpi = "200";
+  rankdir = "BT";
+  compound = "true";
+  fontcolor = "#222222";
+  edge [
+    color = "#D5871488",
+    penwidth = 2,
+    arrowhead = "dot",
+    arrowtail = "dot",
+  ];
+  node [
+    shape = "box",
+    style = "rounded",
+    fixedsize = true,
+    width = 1.7,
+    height = 1.7,
+    labelloc = "c",
+    imagescale = true,
+    fontname = "Sans-Serif",
+    fontsize = 8,
+    margin = 8,
+  ];
+  subgraph "App" {
+    subgraph "cluster-SubGraph.App" {
+      graph [
+        label = "App",
+        labelloc = "b",
+        labeljust = "l",
+        margin = "10",
+        fontsize = "16",
+        penwidth = "2",
+        pencolor = "#888888",
+        style = "filled,rounded",
+        fillcolor = "#f3f3f3",
+      ];
+      subgraph "cluster-SubGraph.CognitoStack" {
+        graph [
+          label = "CognitoStack",
+          labelloc = "b",
+          labeljust = "l",
+          margin = "10",
+          fontsize = "16",
+          penwidth = "2",
+          pencolor = "#888888",
+          style = "filled,rounded",
+          fillcolor = "#e4e4e4",
+        ];
+        "CognitoStack/runlog_user_pool" [
+          label = " runlog_user_pool",
+          fontsize = 12,
+          image = "/home/ilsoldier1984/aws-cdk-projects/runlog30/node_modules/cdk-dia/icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_Amazon-Cognito_64.png",
+          imagescale = "true",
+          imagepos = "tc",
+          penwidth = "0",
+          shape = "node",
+          fixedsize = "true",
+          labelloc = "b",
+          width = 1.2,
+          height = 1.466,
+        ];
+        "CognitoStack/RunlogIdentityPool" [
+          label = " Cognito IdentityPool\nRunlogIdentityPool",
+          fontsize = 12,
+          image = "/home/ilsoldier1984/aws-cdk-projects/runlog30/node_modules/cdk-dia/icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_Amazon-Cognito_64.png",
+          imagescale = "true",
+          imagepos = "tc",
+          penwidth = "0",
+          shape = "node",
+          fixedsize = "true",
+          labelloc = "b",
+          width = 1.2,
+          height = 1.682,
+        ];
+        "CognitoStack/MapsS3AccessRole" [
+          label = " MapsS3AccessRole",
+          fontsize = 12,
+          image = "/home/ilsoldier1984/aws-cdk-projects/runlog30/node_modules/cdk-dia/icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png",
+          imagescale = "true",
+          imagepos = "tc",
+          penwidth = "0",
+          shape = "node",
+          fixedsize = "true",
+          labelloc = "b",
+          width = 1.2,
+          height = 1.466,
+        ];
+        "CognitoStack/IdentityPoolRoleAttachment" [
+          label = " Cognito",
+          fontsize = 12,
+          image = "/home/ilsoldier1984/aws-cdk-projects/runlog30/node_modules/cdk-dia/icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_Amazon-Cognito_64.png",
+          imagescale = "true",
+          imagepos = "tc",
+          penwidth = "0",
+          shape = "node",
+          fixedsize = "true",
+          labelloc = "b",
+          width = 1.2,
+          height = 1.466,
+        ];
+      }
+      subgraph "cluster-SubGraph.TrucksDdbStack" {
+        graph [
+          label = "TrucksDdbStack",
+          labelloc = "b",
+          labeljust = "l",
+          margin = "10",
+          fontsize = "16",
+          penwidth = "2",
+          pencolor = "#888888",
+          style = "filled,rounded",
+          fillcolor = "#e4e4e4",
+        ];
+        "TrucksDdbStack/TrucksTable" [
+          label = " TrucksTable",
+          fontsize = 12,
+          image = "/home/ilsoldier1984/aws-cdk-projects/runlog30/node_modules/cdk-dia/icons/aws/Service/Arch_Database/64/Arch_Amazon-DynamoDB_64@5x.png",
+          imagescale = "true",
+          imagepos = "tc",
+          penwidth = "0",
+          shape = "node",
+          fixedsize = "true",
+          labelloc = "b",
+          width = 1.2,
+          height = 1.466,
+        ];
+        "TrucksDdbStack/EnterTruckLambdaRole" [
+          label = " EnterTruckLambdaRole",
+          fontsize = 12,
+          image = "/home/ilsoldier1984/aws-cdk-projects/runlog30/node_modules/cdk-dia/icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png",
+          imagescale = "true",
+          imagepos = "tc",
+          penwidth = "0",
+          shape = "node",
+          fixedsize = "true",
+          labelloc = "b",
+          width = 1.2,
+          height = 1.466,
+        ];
+        "TrucksDdbStack/EnterTruckLambda" [
+          label = " EnterTruckLambda",
+          fontsize = 12,
+          image = "/home/ilsoldier1984/aws-cdk-projects/runlog30/node_modules/cdk-dia/icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png",
+          imagescale = "true",
+          imagepos = "tc",
+          penwidth = "0",
+          shape = "node",
+          fixedsize = "true",
+          labelloc = "b",
+          width = 2,
+          height = 2.266,
+        ];
+        "TrucksDdbStack/EnterTruckLambdaLogGroup" [
+          label = "\nEnterTruckLambdaLogGr",
+          fontsize = 12,
+          image = "/home/ilsoldier1984/aws-cdk-projects/runlog30/node_modules/cdk-dia/icons/aws/Resource/Res_Management-Governance/Res_48_Dark/Res_Amazon-Cloudwatch_Logs_48_Dark_gen.png",
+          imagescale = "true",
+          imagepos = "tc",
+          penwidth = "0",
+          shape = "node",
+          fixedsize = "true",
+          labelloc = "b",
+          width = 2,
+          height = 2.4819999999999998,
+        ];
+      }
+      subgraph "cluster-SubGraph.RecordsDdbStack" {
+        graph [
+          label = "RecordsDdbStack",
+          labelloc = "b",
+          labeljust = "l",
+          margin = "10",
+          fontsize = "16",
+          penwidth = "2",
+          pencolor = "#888888",
+          style = "filled,rounded",
+          fillcolor = "#e4e4e4",
+        ];
+        "RecordsDdbStack/CsvBucket" [
+          label = " CsvBucket",
+          fontsize = 12,
+          image = "/home/ilsoldier1984/aws-cdk-projects/runlog30/node_modules/cdk-dia/icons/aws/Service/Arch_Storage/64/Arch_Amazon-S3-Standard_64@5x.png",
+          imagescale = "true",
+          imagepos = "tc",
+          penwidth = "0",
+          shape = "node",
+          fixedsize = "true",
+          labelloc = "b",
+          width = 2,
+          height = 2.266,
+        ];
+        "RecordsDdbStack/MapsBucket" [
+          label = " MapsBucket",
+          fontsize = 12,
+          image = "/home/ilsoldier1984/aws-cdk-projects/runlog30/node_modules/cdk-dia/icons/aws/Service/Arch_Storage/64/Arch_Amazon-S3-Standard_64@5x.png",
+          imagescale = "true",
+          imagepos = "tc",
+          penwidth = "0",
+          shape = "node",
+          fixedsize = "true",
+          labelloc = "b",
+          width = 2,
+          height = 2.266,
+        ];
+        "RecordsDdbStack/RecordsTable" [
+          label = " RecordsTable",
+          fontsize = 12,
+          image = "/home/ilsoldier1984/aws-cdk-projects/runlog30/node_modules/cdk-dia/icons/aws/Service/Arch_Database/64/Arch_Amazon-DynamoDB_64@5x.png",
+          imagescale = "true",
+          imagepos = "tc",
+          penwidth = "0",
+          shape = "node",
+          fixedsize = "true",
+          labelloc = "b",
+          width = 1.2,
+          height = 1.466,
+        ];
+        "RecordsDdbStack/CsvLambda" [
+          label = " CsvLambda",
+          fontsize = 12,
+          image = "/home/ilsoldier1984/aws-cdk-projects/runlog30/node_modules/cdk-dia/icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png",
+          imagescale = "true",
+          imagepos = "tc",
+          penwidth = "0",
+          shape = "node",
+          fixedsize = "true",
+          labelloc = "b",
+          width = 2,
+          height = 2.266,
+        ];
+        "RecordsDdbStack/CsvLambdaLogGroup" [
+          label = " CsvLambdaLogGroup",
+          fontsize = 12,
+          image = "/home/ilsoldier1984/aws-cdk-projects/runlog30/node_modules/cdk-dia/icons/aws/Resource/Res_Management-Governance/Res_48_Dark/Res_Amazon-Cloudwatch_Logs_48_Dark_gen.png",
+          imagescale = "true",
+          imagepos = "tc",
+          penwidth = "0",
+          shape = "node",
+          fixedsize = "true",
+          labelloc = "b",
+          width = 2,
+          height = 2.266,
+        ];
+        "RecordsDdbStack/MapsLambdaLayer" [
+          label = " MapsLambdaLayer",
+          fontsize = 12,
+          image = "/home/ilsoldier1984/aws-cdk-projects/runlog30/node_modules/cdk-dia/icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png",
+          imagescale = "true",
+          imagepos = "tc",
+          penwidth = "0",
+          shape = "node",
+          fixedsize = "true",
+          labelloc = "b",
+          width = 2,
+          height = 2.266,
+        ];
+        "RecordsDdbStack/MapsLambda" [
+          label = " MapsLambda",
+          fontsize = 12,
+          image = "/home/ilsoldier1984/aws-cdk-projects/runlog30/node_modules/cdk-dia/icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png",
+          imagescale = "true",
+          imagepos = "tc",
+          penwidth = "0",
+          shape = "node",
+          fixedsize = "true",
+          labelloc = "b",
+          width = 2,
+          height = 2.266,
+        ];
+        "RecordsDdbStack/MapsLambdaLogGroup" [
+          label = " MapsLambdaLogGroup",
+          fontsize = 12,
+          image = "/home/ilsoldier1984/aws-cdk-projects/runlog30/node_modules/cdk-dia/icons/aws/Resource/Res_Management-Governance/Res_48_Dark/Res_Amazon-Cloudwatch_Logs_48_Dark_gen.png",
+          imagescale = "true",
+          imagepos = "tc",
+          penwidth = "0",
+          shape = "node",
+          fixedsize = "true",
+          labelloc = "b",
+          width = 2,
+          height = 2.266,
+        ];
+        "RecordsDdbStack/BucketNotificationsHandler050a0587b7544547bf325f094a3db834/Role" [
+          label = " Role",
+          fontsize = 12,
+          image = "/home/ilsoldier1984/aws-cdk-projects/runlog30/node_modules/cdk-dia/icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png",
+          imagescale = "true",
+          imagepos = "tc",
+          penwidth = "0",
+          shape = "node",
+          fixedsize = "true",
+          labelloc = "b",
+          width = 1.2,
+          height = 1.466,
+        ];
+      }
+      subgraph "cluster-SubGraph.RestApiGWStack" {
+        graph [
+          label = "RestApiGWStack",
+          labelloc = "b",
+          labeljust = "l",
+          margin = "10",
+          fontsize = "16",
+          penwidth = "2",
+          pencolor = "#888888",
+          style = "filled,rounded",
+          fillcolor = "#e4e4e4",
+        ];
+        "RestApiGWStack/RunlogRestApi" [
+          label = " RunlogRestApi",
+          fontsize = 12,
+          image = "/home/ilsoldier1984/aws-cdk-projects/runlog30/node_modules/cdk-dia/icons/aws/Service/Arch_Networking-Content/64/Arch_Amazon-API-Gateway_64@5x.png",
+          imagescale = "true",
+          imagepos = "tc",
+          penwidth = "0",
+          shape = "node",
+          fixedsize = "true",
+          labelloc = "b",
+          width = 1.2,
+          height = 1.466,
+        ];
+        "RestApiGWStack/RunlogCognitoAuthorizer" [
+          label = "\nRunlogCognitoAuthoriz",
+          fontsize = 12,
+          image = "/home/ilsoldier1984/aws-cdk-projects/runlog30/node_modules/cdk-dia/icons/aws/Service/Arch_Networking-Content/64/Arch_Amazon-API-Gateway_64@5x.png",
+          imagescale = "true",
+          imagepos = "tc",
+          penwidth = "0",
+          shape = "node",
+          fixedsize = "true",
+          labelloc = "b",
+          width = 1.2,
+          height = 1.682,
+        ];
+        "RestApiGWStack/DynamoDBScanRole" [
+          label = " DynamoDBScanRole",
+          fontsize = 12,
+          image = "/home/ilsoldier1984/aws-cdk-projects/runlog30/node_modules/cdk-dia/icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png",
+          imagescale = "true",
+          imagepos = "tc",
+          penwidth = "0",
+          shape = "node",
+          fixedsize = "true",
+          labelloc = "b",
+          width = 1.2,
+          height = 1.466,
+        ];
+      }
+    }
+  }
+  "CognitoStack/RunlogIdentityPool" -> "CognitoStack/runlog_user_pool" [
+    dir = "both",
+  ];
+  "CognitoStack/MapsS3AccessRole" -> "CognitoStack/RunlogIdentityPool" [
+    dir = "both",
+  ];
+  "CognitoStack/IdentityPoolRoleAttachment" -> "CognitoStack/RunlogIdentityPool" [
+    dir = "both",
+  ];
+  "CognitoStack/IdentityPoolRoleAttachment" -> "CognitoStack/MapsS3AccessRole" [
+    dir = "both",
+  ];
+  "TrucksDdbStack/EnterTruckLambdaRole" -> "TrucksDdbStack/TrucksTable" [
+    dir = "both",
+  ];
+  "TrucksDdbStack/EnterTruckLambda" -> "TrucksDdbStack/TrucksTable" [
+    dir = "both",
+  ];
+  "TrucksDdbStack/EnterTruckLambda" -> "TrucksDdbStack/EnterTruckLambdaRole" [
+    dir = "both",
+  ];
+  "TrucksDdbStack/EnterTruckLambdaLogGroup" -> "TrucksDdbStack/EnterTruckLambda" [
+    dir = "both",
+  ];
+  "RecordsDdbStack/CsvBucket" -> "RecordsDdbStack/CsvLambda" [
+    dir = "both",
+  ];
+  "RecordsDdbStack/CsvLambda" -> "TrucksDdbStack/TrucksTable" [
+    dir = "both",
+  ];
+  "RecordsDdbStack/CsvLambda" -> "RecordsDdbStack/RecordsTable" [
+    dir = "both",
+  ];
+  "RecordsDdbStack/CsvLambdaLogGroup" -> "RecordsDdbStack/CsvLambda" [
+    dir = "both",
+  ];
+  "RecordsDdbStack/MapsLambda" -> "RecordsDdbStack/CsvBucket" [
+    dir = "both",
+  ];
+  "RecordsDdbStack/MapsLambda" -> "RecordsDdbStack/MapsBucket" [
+    dir = "both",
+  ];
+  "RecordsDdbStack/MapsLambda" -> "RecordsDdbStack/RecordsTable" [
+    dir = "both",
+  ];
+  "RecordsDdbStack/MapsLambda" -> "RecordsDdbStack/MapsLambdaLayer" [
+    dir = "both",
+  ];
+  "RecordsDdbStack/MapsLambdaLogGroup" -> "RecordsDdbStack/MapsLambda" [
+    dir = "both",
+  ];
+  "RestApiGWStack/RunlogRestApi" -> "TrucksDdbStack/EnterTruckLambda" [
+    dir = "both",
+  ];
+  "RestApiGWStack/RunlogRestApi" -> "TrucksDdbStack/TrucksTable" [
+    dir = "both",
+  ];
+  "RestApiGWStack/RunlogRestApi" -> "RecordsDdbStack/RecordsTable" [
+    dir = "both",
+  ];
+  "RestApiGWStack/RunlogRestApi" -> "RestApiGWStack/RunlogCognitoAuthorizer" [
+    dir = "both",
+  ];
+  "RestApiGWStack/RunlogRestApi" -> "RestApiGWStack/DynamoDBScanRole" [
+    dir = "both",
+  ];
+  "RestApiGWStack/RunlogCognitoAuthorizer" -> "CognitoStack/runlog_user_pool" [
+    dir = "both",
+  ];
+  "RestApiGWStack/RunlogCognitoAuthorizer" -> "RestApiGWStack/RunlogRestApi" [
+    dir = "both",
+  ];
+  "RestApiGWStack/DynamoDBScanRole" -> "TrucksDdbStack/TrucksTable" [
+    dir = "both",
+  ];
+  "RestApiGWStack/DynamoDBScanRole" -> "RecordsDdbStack/RecordsTable" [
+    dir = "both",
+  ];
+}
