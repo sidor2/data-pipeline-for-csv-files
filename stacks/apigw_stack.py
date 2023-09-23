@@ -158,3 +158,43 @@ class RestApiGWStack(Stack):
                 )
             ]
         )
+
+        # create DELETE method for a specific record
+        delete_record = rest_api.root.add_resource("{filename}")
+
+        delete_record.add_method("DELETE",
+            apigw.AwsIntegration(
+                service="dynamodb",
+                action="DeleteItem",
+                integration_http_method="DELETE",
+                options=apigw.IntegrationOptions(
+                    credentials_role=ddb_scan_role,
+                    request_templates={
+                        "application/json": repr({
+                            "TableName": records_table.table_name,
+                            "Key": {
+                                "filename": {
+                                    "S": "$input.params('filename')"
+                                }
+                            }
+                        }).replace("'", '"')
+                    },
+                    integration_responses=[
+                        apigw.IntegrationResponse(
+                            status_code="200",
+                            response_templates={
+                                "application/json": ""
+                            }
+                        )
+                    ],
+                    passthrough_behavior=apigw.PassthroughBehavior.WHEN_NO_TEMPLATES,
+                )
+            ),
+            authorization_type=apigw.AuthorizationType.COGNITO,
+            authorizer=rest_auth,
+            method_responses=[
+                apigw.MethodResponse(
+                    status_code="200",
+                )
+            ]
+        )

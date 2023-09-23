@@ -1,7 +1,9 @@
 
-# Welcome to the Runlog CDK project!
+# Data Pipeline For CSV Files
 
-This app tracks test records for a fleet of trucks based on incoming CSV files. 
+<font size=6> A data pipeline that generates a map based on the coordinates in the CSV files.</font>
+
+This pipeline tracks test records for a fleet of trucks based on incoming CSV files. 
 Trucks configurations and test records are stored in DDB tables. 
 As soon as a CSV file is uploaded into the IncomingCsv S3 bucket, Lambda function is invoked. 
 The first Lambda function creates a test record in Records DDB table. 

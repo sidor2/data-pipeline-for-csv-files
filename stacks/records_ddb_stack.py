@@ -13,6 +13,9 @@ from aws_cdk import (
 import uuid
 from constructs import Construct
 
+incomingcsv_bucket_name = "incomingcsvs-" + str(uuid.uuid4())
+maps_bucket_name = "maps-" + str(uuid.uuid4())
+
 with open("./templates/get_all_records.txt", "r", encoding="utf-8") as f:
     get_all_records_template= f.read()
 
@@ -33,7 +36,7 @@ class RecordsDdbStack(Stack):
         csv_bucket = s3.Bucket(
             self, "CsvBucket",
             # removal_policy=RemovalPolicy.RETAIN,
-            bucket_name=f"incomingcsvs-{uuid.uuid4()}",
+            bucket_name=incomingcsv_bucket_name,
             enforce_ssl=True
         )
 
@@ -49,7 +52,7 @@ class RecordsDdbStack(Stack):
         maps_bucket = s3.Bucket(
             self, "MapsBucket",
             # removal_policy=RemovalPolicy.RETAIN,
-            bucket_name=f"maps-{uuid.uuid4()}",
+            bucket_name=maps_bucket_name,
             public_read_access=False,
             enforce_ssl=True,
         )
