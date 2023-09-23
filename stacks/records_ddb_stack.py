@@ -7,7 +7,8 @@ from aws_cdk import (
     aws_s3_notifications as s3n,
     aws_lambda as _lambda,
     aws_dynamodb as dynamodb,
-    aws_sqs as sqs
+    aws_sqs as sqs,
+    aws_iam as iam
 )
 import uuid
 from constructs import Construct
@@ -35,6 +36,15 @@ class RecordsDdbStack(Stack):
             bucket_name=f"incomingcsvs-{uuid.uuid4()}",
             enforce_ssl=True
         )
+
+        csv_upload_statement = iam.PolicyStatement(
+            actions=["s3:PutObject"],
+            not_resources=[csv_bucket.arn_for_objects("*.csv")],
+            effect=iam.Effect.DENY,
+            principals=[iam.AnyPrincipal()]
+        )
+
+        csv_bucket.add_to_resource_policy(csv_upload_statement)
 
         maps_bucket = s3.Bucket(
             self, "MapsBucket",
