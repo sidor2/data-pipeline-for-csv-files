@@ -10,7 +10,7 @@ in the CSV file, saves into the Maps S3 bucket, and adds the file name into the 
 User authentication is handled by Cognito User Pool.
 
 ### Workflow Diagram
-<img src="./workflow.png" alt="Workflow Diagram" width="50%" height="25%">
+<img src="./workflow.png" alt="Workflow Diagram">
 
 The app consists of the following components:
 
