@@ -20,15 +20,6 @@ cognito_client = boto3.client('cognito-idp', region_name=region)
 
 try:
     jwt_token = authenticate_user(username, password, user_pool_id=user_pool_id, app_client_id=user_pool_client_id)
-    # response = cognito_client.initiate_auth(
-    #     ClientId=user_pool_client_id,
-    #     AuthFlow='USER_PASSWORD_AUTH',
-    #     AuthParameters={
-    #         'USERNAME': username,
-    #         'PASSWORD': password
-    #     }
-    # )
-    # jwt_token = response['AuthenticationResult']['IdToken']
 
 except cognito_client.exceptions.NotAuthorizedException as e:
     print('Failed to authenticate:', e.response['Error']['Message'])

@@ -72,8 +72,6 @@ class CognitoStack(Stack):
             roles={"authenticated": s3_access_role.role_arn}
         )
 
-# TODO: Create an IAM role for the identity pool allowing access to the Maps S3 bucket
-
         self.authorizer = auth.HttpUserPoolAuthorizer(
             'user_pool_authorizer',
             self.runlog_user_pool,

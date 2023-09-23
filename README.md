@@ -6,18 +6,11 @@ Trucks configurations and test records are stored in DDB tables.
 As soon as a CSV file is uploaded into the IncomingCsv S3 bucket, Lambda function is invoked. 
 The first Lambda function creates a test record in Records DDB table. 
 As soon as the record is created, the second Lambda generates a map from coordinates 
-in the CSV file and adds the file name into the records table.
+in the CSV file, saves into the Maps S3 bucket, and adds the file name into the records table.
+User authentication is handled by Cognito User Pool.
 
-## Prerequisites
-
-Before deploying this stack, you need the following prerequisites:
-
-1. AWS CLI installed and configured with appropriate credentials.
-2. Node.js installed, as the AWS CDK is built on Node.js.
-3. Python3 installed.
-
-## Description
-<img src="./diagram.png" alt="CDK App Architecture Diagram" width="50%" height="25%">
+### Workflow Diagram
+<img src="./workflow.png" alt="Workflow Diagram" width="50%" height="25%">
 
 The app consists of the following components:
 
@@ -82,6 +75,17 @@ This is the main application file that orchestrates the deployment of all the de
 
 The app also includes several other Python files, including Lambda functions (csv_lambda, maps_lambda, trucksdb_lambda) and templates for processing data. These files are used to implement the business logic and integration with other AWS services.
 
+## Prerequisites
+
+Before deploying this stack, you need the following prerequisites:
+
+1. AWS CLI installed and configured with appropriate credentials.
+2. Node.js installed, as the AWS CDK is built on Node.js.
+3. Python3 installed.
+
+## Description
+### Stacks Diagram
+<img src="./diagram.png" alt="CDK App Architecture Diagram" width="50%" height="25%">
 
 ## Deployment steps
 To manually create a virtualenv on MacOS and Linux:

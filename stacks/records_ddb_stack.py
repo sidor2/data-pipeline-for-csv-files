@@ -8,11 +8,8 @@ from aws_cdk import (
     aws_lambda as _lambda,
     aws_dynamodb as dynamodb,
     aws_sqs as sqs
-    # aws_iam as iam,
-    # aws_cognito as cognito
-    # RemovalPolicy
 )
-
+import uuid
 from constructs import Construct
 
 with open("./templates/get_all_records.txt", "r", encoding="utf-8") as f:
@@ -35,14 +32,14 @@ class RecordsDdbStack(Stack):
         csv_bucket = s3.Bucket(
             self, "CsvBucket",
             # removal_policy=RemovalPolicy.RETAIN,
-            bucket_name="incomingcsvs-",
+            bucket_name=f"incomingcsvs-{uuid.uuid4()}",
             enforce_ssl=True
         )
 
         maps_bucket = s3.Bucket(
             self, "MapsBucket",
             # removal_policy=RemovalPolicy.RETAIN,
-            bucket_name="maps-",
+            bucket_name=f"maps-{uuid.uuid4()}",
             public_read_access=False,
             enforce_ssl=True,
         )
